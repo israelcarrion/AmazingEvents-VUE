@@ -435,7 +435,7 @@ footer {
     }
 }
 
-@media (max-width: 370px) {
+@media (max-width: 425px) {
     .container-fluid {
         flex-direction: column;
     }
