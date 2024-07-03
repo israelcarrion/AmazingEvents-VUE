@@ -4,12 +4,12 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Details</title>
+    <title>Amazing Events - Details</title>
     <link rel="stylesheet" href="../Styles/style.css" />
     <link rel="shortcut icon" href="../Images/favicon.png" type="image/x-icon" />
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous" />
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
 </head>
 
 <body>
@@ -20,17 +20,17 @@
                     <img src="../Images/amazing_brand.png" alt="logotipo" class="logotipo" />
                     <div class="text-end">
                         <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
-                            data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false"
-                            aria-label="Toggle navigation">
+                            data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup"
+                            aria-expanded="false" aria-label="Toggle navigation">
                             <span class="navbar-toggler-icon"></span>
                         </button>
                         <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
                             <div class="navbar-nav">
-                                <a class="nav-link" href="../../index.html">HOME</a>
-                                <a class="nav-link" href="./upcomingEvents.html">UPCOMING EVENTS</a>
-                                <a class="nav-link" href="./pastEvents.html">PAST EVENTS</a>
-                                <a class="nav-link" href="./contact.html">CONTACT</a>
-                                <a class="nav-link" href="./stats.html">STATS</a>
+                                <a class="btn" href="../../index.html">All events</a>
+                                <a class="btn" href="./upcomingEvents.html">Upcoming Events</a>
+                                <a class="btn" href="./pastEvents.html">Past Events</a>
+                                <a class="btn" href="./contact.html">Contact</a>
+                                <a class="btn" href="./stats.html">Stats</a>
                             </div>
                         </div>
                     </div>
@@ -39,7 +39,7 @@
         </header>
         <main>
             <div class="d-flex justify-content-center" id="contenedorDetalle">
-                <div class="card" id="cardDetalles" >
+                <div class="card" id="cardDetalles">
                     <img :src="event.image" class="card-img-top" alt="imgdetail" id="imgdetalle" />
                     <div class="card-body ">
                         <h5 class="card-title">{{event.name}}</h5>
@@ -55,16 +55,20 @@
                 </div>
             </div>
         </main>
-        <footer class="d-flex justify-content-between align-items-center">
-            <div class="d-flex gap-3">
-                <a href="http://facebook.com"><img src="../Images/facebook.png" alt="facebook" class="red" /></a>
-                <a href="http://instagram.com"><img src="../Images/instagram.png" alt="instagram" class="red" /></a>
-                <a href="http://whatsapp.com"><img src="../Images/whatsapp.png" alt="whatsapp" class="red" /></a>
+        <footer>
+            <div class="iconos">
+                <a href="#" class="a-icono"><i class="bi bi-twitter-x"></i></a>
+                <a href="#" class="a-icono"><i class="bi bi-whatsapp"></i></a>
+                <a href="#" class="a-icono"><i class="bi bi-telegram"></i></a>
             </div>
-            <h6>COHORT 51</h6>
+            <div>
+                <p class="p-footer">&copy; 2024 Amazing Events.</p>
+            </div>
         </footer>
     </div>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm"
+        crossorigin="anonymous"></script>
     <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
     <script src="../Script/details.js"></script>
 </body>

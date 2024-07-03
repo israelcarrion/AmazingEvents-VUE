@@ -35,4 +35,11 @@ createApp({
       this.filtrados = this.filtroSearch(filtradosCheck, this.inputSearch);
     },
   },
+  mounted(){
+    document.querySelectorAll('.a-icono').forEach(function(element) {
+      element.addEventListener('click', function(event) {
+        event.preventDefault();
+      });
+    });
+  },
 }).mount("#app");

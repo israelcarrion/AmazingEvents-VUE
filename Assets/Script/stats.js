@@ -108,6 +108,13 @@ createApp({
         return tabla;
     },
   },
+  mounted(){
+    document.querySelectorAll('.a-icono').forEach(function(element) {
+      element.addEventListener('click', function(event) {
+        event.preventDefault();
+      });
+    });
+  },
   computed:{
     
   }

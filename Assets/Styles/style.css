@@ -1,68 +1,280 @@
 #app {
-    display: grid;
+    display: flex;
+    flex-direction: column;
     min-height: 100vh;
-    grid-template-rows: auto 1fr auto;
 }
 
-/*---------------------------HEADER-----------------------------*/
 header {
-    background-color: #fed2e5;
-    border-bottom: 1px solid #8f6277;
+    background-color: #abdbce;
+    border-bottom: solid #4c8d7c 1px;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+}
+
+main {
+    flex: 1;
 }
 
 .logotipo {
-    width: 10rem;
+    width: 13rem;
 }
 
-/*---------------------------MAIN-------------------------------*/
-main {
-    background-color: #cd9cb2;
-    padding: 2rem;
+.btn {
+    font-size: 1.2rem !important;
+    background: transparent;
+    border: none;
+    padding: 1em 1.5em;
+    color: #71b09f;
+    position: relative;
+    transition: 0.5s ease;
+    cursor: pointer;
+    font-weight: 500 !important;
+    text-align: center;
+    align-content: center;
 }
 
-.banner {
+.btn::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    height: 2px;
+    width: 0;
+    background-color: #71b09f;
+    transition: 0.5s ease;
+}
+
+.btn:hover {
+    transition-delay: 0.3s;
+    font-weight: 500;
+    color: #d90368 !important;
+}
+
+.btn:hover::before {
     width: 100%;
+}
+
+.btn::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    height: 0;
+    width: 100%;
+    background-color: #71b09f;
+    transition: 0.4s ease;
+    z-index: -1;
+}
+
+.btn:hover::after {
+    height: 100%;
+    transition-delay: 0.4s;
+    color: aliceblue;
+}
+
+.custom-toggler {
+    padding: 0.5rem 0.5rem;
+    font-size: 0.75rem;
+}
+
+.custom-toggler .navbar-toggler-icon {
+    width: 1.5rem !important;
+    height: 1.5rem !important;
+}
+
+.text-end {
+    display: flex;
+    flex-direction: column;
 }
 
 h5 {
     font-size: 2rem !important;
 }
 
+.carousel-inner {
+    height: 20rem;
+}
+
+.banner {
+    height: 20rem;
+    opacity: 0.7 !important;
+    width: 100%;
+}
+
+.carousel-caption {
+    opacity: 1;
+    color: #d90368 !important;
+    font-family: "Latin Modern Roman";
+    font-style: italic;
+    text-shadow: 2px 2px 9px white;
+}
+
+.checkbox {
+    appearance: none;
+    width: 17px;
+    height: 17px;
+    aspect-ratio: 1;
+    border-radius: 5px;
+    border: 2px solid #71b09f;
+    position: relative;
+    transition: all 0.2s ease-in-out;
+}
+
+.checkbox::before {
+    font-family: "Quicksand", sans-serif;
+    position: absolute;
+    bottom: -10px;
+    left: -1px;
+    content: "✔";
+    font-size: 25px;
+    color: #d90368;
+    transform: scale(0);
+    transition: all 0.2s ease-in-out;
+}
+
+.checkbox:checked::before {
+    animation: zoom 0.5s ease-in-out;
+    transform: scale(1);
+}
+
+@keyframes zoom {
+    0% {
+        transform: scale(0);
+    }
+
+    20% {
+        transform: scale(1.5);
+    }
+
+    40% {
+        transform: scale(0.5);
+    }
+
+    50% {
+        transform: scale(1);
+    }
+
+    70% {
+        transform: scale(1.2);
+    }
+
+    90% {
+        transform: scale(0.8);
+    }
+
+    100% {
+        transform: scale(1);
+    }
+}
+
+.form-check-label {
+    font-size: 1.2rem;
+}
+
+.d-inline-flex {
+    display: flex;
+    align-items: center;
+}
+
 .card {
-    width: 18rem;
-    background-color: #edbad1 !important;
+    width: 17rem;
+    background-color: #F4FBF6 !important;
 }
 
 .card-text {
     text-align: justify;
+    font-size: 1rem;
+}
+
+.body-description {
+    padding: 0px 16px !important;
+    height: 8rem !important;
+}
+
+.body-price {
+    padding: 0px 30px !important;
+    height: 3.5rem;
 }
 
 .card-img-top {
-    height: 13rem;
+    height: 12rem;
     object-fit: cover;
 }
 
 .tituloTarjetas {
-    font-size: 1.5rem !important;
+    font-size: 1.3rem !important;
     height: 3rem;
     display: flex;
     justify-content: center;
     align-items: center;
+    margin: 0;
+    text-shadow: 0.5px 0.5px 3px #2c4d44;
 }
 
 .precio {
     margin: 0;
+    font-family: 'Roboto Slab', serif;
+    font-size: 25px;
+    font-weight: bold;
+    text-align: center;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
 }
 
-.botonDetalles {
+.detailButton {
+    position: relative;
+    font-size: 15px;
     text-decoration: none;
-    color: black;
-    border: 1px solid #8f6277;
-    padding: 0.5rem;
+    padding: 5px 15px;
+    display: inline-block;
+    border-radius: 6em;
+    transition: all .2s;
+    border: none;
+    font-family: inherit;
+    font-weight: 500;
+    color: white;
+    background-color: #4c8d7c;
+}
+
+.detailButton:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+.detailButton:active {
+    transform: translateY(-1px);
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+}
+
+.detailButton::after {
+    content: "";
+    display: inline-block;
+    height: 100%;
+    width: 100%;
+    border-radius: 100px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    transition: all .4s;
+}
+
+.detailButton::after {
+    background-color: #fff;
+}
+
+.detailButton:hover::after {
+    transform: scaleX(1.4) scaleY(1.6);
+    opacity: 0;
 }
 
 .cajaForm {
-    margin-top: 2rem;
+    margin: 1rem 3rem;
+}
+
+.form-control {
+    border-color: #4c8d7c !important;
 }
 
 #message {
@@ -72,12 +284,14 @@ h5 {
 
 .tablastats {
     margin-top: 2rem;
-    background-color: #fed2e5;
     border: 1px solid #8f6277;
     width: 100%;
+    margin-left: 1.5rem;
+    margin-right: 1.5rem;
 }
 
-tr>td, th {
+tr>td,
+th {
     height: 4rem;
     border: 1px solid #8f6277;
     text-align: center;
@@ -87,52 +301,87 @@ tr>td {
     padding: 0rem 0.5rem;
 }
 
-th{
+th {
     padding-left: 1rem;
-    background-color: #edbad1;
+    background-color: #fed2e5;
 }
-span{
-    font-weight:700 ;
+
+span {
+    font-weight: 700;
 }
-/*---------------------------FOOTER-------------------------------*/
+
+.tablaTres {
+    margin-bottom: 2rem;
+}
 
 footer {
-    background-color: #fed2e5;
-    height: 3rem;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-around;
+    background-color: #4c8d7c;
+    height: 4.7rem;
     padding: 0rem 2rem;
     border-top: 1px solid #8f6277;
 }
 
-.red {
-    width: 2rem;
-    height: 2rem;
-    object-fit: cover;
-    filter:sepia(50%);
+.iconos {
+    display: flex;
+    gap: 1.5rem;
 }
 
-@media (min-width: 768px) { /*---------------TABLET-------------*/
-    
-    /*-----------------------HEADER-----------------------------*/
+.a-icono:hover{
+    transform: scale(1.2) !important;
+}
+
+.bi {
+    font-size: 1.5rem !important;
+    color: #cfebe3;
+}
+
+.p-footer{
+    margin: 0;
+    color: #cfebe3;
+    font-weight: 600;
+}
+
+#contenedorDetalle{
+    padding-top: 6rem;
+    padding-bottom: 1rem;
+}
+
+@media (min-width: 768px) {
+    header {
+        height: 5.5rem;
+    }
+
+    main {
+        margin-top: 5.5rem;
+    }
+
+    .container-fluid {
+        padding-top: 0.5rem;
+    }
+
     .nav-link {
         border: 1px solid #8f6277 !important;
         margin: 0rem 0.5rem;
     }
 
-    /*-----------------------MAIN-------------------------------*/
     .carousel-inner {
-        height: 15rem;
+        height: 20rem;
     }
 
     h5 {
         font-size: 3rem !important;
     }
-    
+
     .busqueda {
         width: 25rem !important;
     }
-    
+
     .banner {
-        height: 15rem;
+        height: 20rem;
         object-fit: cover;
         object-position: center;
     }
@@ -143,7 +392,7 @@ footer {
 
     .cajaDos {
         display: flex;
-        justify-content:space-around;
+        justify-content: space-around;
         align-items: center;
     }
 
@@ -162,12 +411,12 @@ footer {
         width: 65% !important;
     }
 
-    tr>td, th {
+    tr>td,
+    th {
         height: 2.5rem;
     }
 
     #cardDetalles {
-        background-color: #edbad1;
         flex-direction: row;
         width: 45rem;
     }
@@ -179,5 +428,23 @@ footer {
     .card-title {
         text-align: center;
         text-decoration: underline;
+    }
+
+    #contenedorDetalle{
+        padding-top: 3rem;
+    }
+}
+
+@media (max-width: 370px) {
+    .container-fluid {
+        flex-direction: column;
+    }
+
+    .logotipo {
+        padding-bottom: 0.5rem;
+    }
+
+    #contenedorDetalle{
+        padding-top: 8rem;
     }
 }
